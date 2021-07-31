@@ -6,9 +6,7 @@ export default function Filter({ filter, handleChange }) {
     <div>
       <FilterTitle>Find contacts by name</FilterTitle>
       <FilterInput
-        filter={filter}
         type="text"
-        name="filter"
         value={filter}
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
