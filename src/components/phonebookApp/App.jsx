@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import toast, { Toaster } from 'react-hot-toast';
 import { apiStorage } from '../../apiStorage.js';
 
 import ContactForm from '../ContactForm';
@@ -24,7 +25,17 @@ export default function App() {
 
   const handleSubmit = (name, number) => {
     if (nameVerification(name)) {
-      alert(`${name} is already in contacts`);
+      toast.error(`${name} is already in contacts`, {
+        style: {
+          border: '1px solid #713200',
+          padding: '16px',
+          color: '#713200',
+        },
+        iconTheme: {
+          primary: '#713200',
+          secondary: '#FFFAEE',
+        },
+      });
       return;
     }
     const newContact = {
@@ -62,6 +73,7 @@ export default function App() {
           onDeleteContact={deleteContact}
         />
       </Section>
+      <Toaster />
     </Container>
   );
 }
