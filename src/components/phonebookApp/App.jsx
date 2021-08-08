@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import toast, { Toaster } from 'react-hot-toast';
 import { apiStorage } from '../../apiStorage.js';
 
+import Card from '../Card';
 import ContactForm from '../ContactForm';
 import ContactList from '../ContactList';
 import Filter from '../Filter';
@@ -60,20 +61,22 @@ export default function App() {
   );
 
   return (
-    <Container>
-      <Section>
-        <Title>Phonebook</Title>
-        <ContactForm onSubmit={handleSubmit} />
-      </Section>
-      <Section>
-        <Title>Contacts</Title>
-        <Filter filter={filter} handleChange={handleFilterChange} />
-        <ContactList
-          contacts={filteredContacts}
-          onDeleteContact={deleteContact}
-        />
-      </Section>
-      <Toaster />
-    </Container>
+    <Card>
+      <Container>
+        <Section>
+          <Title>Phonebook</Title>
+          <ContactForm onSubmit={handleSubmit} />
+        </Section>
+        <Section>
+          <Title>Contacts</Title>
+          <Filter filter={filter} handleChange={handleFilterChange} />
+          <ContactList
+            contacts={filteredContacts}
+            onDeleteContact={deleteContact}
+          />
+        </Section>
+        <Toaster />
+      </Container>
+    </Card>
   );
 }

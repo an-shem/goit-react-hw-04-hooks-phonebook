@@ -6,6 +6,7 @@ export default function Filter({ filter, handleChange }) {
     <div>
       <FilterTitle>Find contacts by name</FilterTitle>
       <FilterInput
+        filter={filter}
         type="text"
         value={filter}
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"

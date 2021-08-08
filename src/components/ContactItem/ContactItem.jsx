@@ -11,7 +11,7 @@ export default function ContactItem({
         - {name}: {number}
       </Text>
       <DeleteButton type="button" onClick={() => onDeleteContact(id)}>
-        Delete
+        X
       </DeleteButton>
     </Contact>
   );
